@@ -10,7 +10,8 @@
  */
 float BIAS_SCORE;
 
-DGTreeNode *DGTreeConstruct(map<int, Graph *> *data_graphs) {
+DGTreeNode *DGTreeConstruct(map<int, Graph *> *data_graphs) 
+{
    DGTreeNode *root;
    int graph_id;
    Graph *G;
@@ -56,7 +57,8 @@ DGTreeNode *DGTreeConstruct(map<int, Graph *> *data_graphs) {
    return root;
 }
 
-bool isAnEdge(adj_list_t *adj_list, int u, int v, int val) {
+bool isAnEdge(adj_list_t *adj_list, int u, int v, int val) 
+{
     
     // u is larger than the size of the list 
     if (u >= adj_list->size())
@@ -73,7 +75,8 @@ bool isAnEdge(adj_list_t *adj_list, int u, int v, int val) {
     return false;
 }
 
-void printAndDestroyHeap(DG_Heap *H) {
+void printAndDestroyHeap(DG_Heap *H) 
+{
     while (!H->empty()) {
        DGTreeNode *p = H->top(); 
        cout << p->grow_edge->x_label << "-" 
@@ -84,7 +87,8 @@ void printAndDestroyHeap(DG_Heap *H) {
     }
 }
 
-void treeGrow(DGTreeNode *root) {
+void treeGrow(DGTreeNode *root) 
+{
     // Heap of possible child nodes of root ordered by score for root->fgraph
     DG_Heap *H;
     DGTreeNode *g_plus;
